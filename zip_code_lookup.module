@@ -1,0 +1,16 @@
+<?php
+
+use Drupal\Core\Entity\EntityTypeInterface;
+/**
+ * Implements hook_entity_bundle_field_info_alter().
+ */
+function zip_code_lookup_entity_bundle_field_info_alter(&$fields, EntityTypeInterface $entity_type, $bundle)
+{
+    if ($entity_type->id() === 'group') {
+        if ($bundle == 'subscriber') {
+            if (isset($fields['field_billing'])) {
+                $fields['field_billing']->addConstraint('ZipCode', []);
+            }
+        }
+    }
+}

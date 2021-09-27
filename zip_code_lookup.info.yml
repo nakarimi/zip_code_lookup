@@ -1,0 +1,6 @@
+name: Zip Code Lookup
+type: module
+description: It also supplies a ZIP+4® Code.
+package: Custom
+core: 8.x
+core_version_requirement: ^8 || ^9
